@@ -1,0 +1,36 @@
+{
+  "name": "migration",
+  "version": "1.0.0",
+  "description": "A database migration project sample",
+  "main": "index.js",
+  "scripts": {
+    "migration:create": "npx sequelize-cli migration:generate",
+    "migrate": "env-cmd npx sequelize-cli db:migrate",
+    "migrate:rollback:recent": "env-cmd npx sequelize-cli db:migrate:undo",
+    "migrate:rollback:all": "env-cmd npx sequelize-cli db:migrate:undo:all",
+    "model:create": "npx sequelize-cli model:generate",
+    "seed:create": "npx sequelize-cli see:generate",
+    "seed:execute": "npx sequelize-cli db:seed:all",
+    "seed:rollback:recent": "npx sequelize-cli db:seed:undo",
+    "seed:rollback:all": "npx sequelize-cli db:seed:undo:all",
+    "start": "yarn migrate && node ./src/index.js",
+    "dev": "yarn migrate && nodemon ./src/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/register": "^7.23.7",
+    "eslint-config-prettier": "^9.1.0",
+    "nodemon": "^3.1.0",
+    "prettier": "3.2.5"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "env-cmd": "^10.1.0",
+    "express": "^4.19.2",
+    "mysql2": "^3.9.7",
+    "sequelize": "^6.37.3",
+    "sequelize-cli": "^6.6.2"
+  }
+}
